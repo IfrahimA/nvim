@@ -1,6 +1,6 @@
-## Neovim Setup
+# Neovim Setup
 
-# Plugins
+## Plugins
 - telescope
 - formatter
 - mason
