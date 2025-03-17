@@ -1,14 +1,6 @@
-**Neovim Configuration**
+## Neovim Setup
 
-LSP Support
-- clangd
-- ccls
-- vimlsp
-- mesonlsp
-- gopls
-- cmakelang
-
-Plugins
+#Plugins
 - telescope
 - formatter
 - mason
@@ -19,3 +11,4 @@ Plugins
 - nvim-lspconfig
 - dressing
 - blink (auto-complete)
+- lua-line
