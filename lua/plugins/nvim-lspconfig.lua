@@ -3,6 +3,20 @@ return {
 	config = function()
 		local lspconfig = require("lspconfig")
 
+		--Python
+		require("lspconfig").pylsp.setup({
+			settings = {
+				pylsp = {
+					plugins = {
+						pycodestyle = {
+							ignore = { "W391" },
+							maxLineLength = 100,
+						},
+					},
+				},
+			},
+		})
+
 		--C/C++
 		lspconfig.clangd.setup({})
 		lspconfig.ccls.setup({})
