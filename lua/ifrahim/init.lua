@@ -1,5 +1,6 @@
 -- Column (Left)
 vim.opt.number = true
+vim.opt.relativenumber = true
 
 -- Tab Settings
 vim.opt.tabstop = 2
