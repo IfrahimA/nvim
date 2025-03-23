@@ -1,5 +1,9 @@
+-- 24-bit color
+vim.opt.termguicolors = true
+
 -- Column (Left)
 vim.opt.number = true
+vim.opt.relativenumber = true
 
 -- Tab Settings
 vim.opt.tabstop = 2
@@ -51,11 +55,6 @@ vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current bu
 
 -- Open The Terminal
 vim.keymap.set("n", "<leader>t", ":term<CR>", {desc = "Open Terminal"})
-vim.keymap.set("n", "<leader>ot", function()
-  vim.cmd("split")        -- Create a horizontal split
-  vim.cmd("wincmd j")     -- Move to the newly created split
-  vim.cmd("terminal")     -- Open a terminal in the split
-end, { noremap = true, silent = true })
 
 -- Nvim Tree
 vim.g.loaded_netrw = 1 -- disable netrw at the very start of your init.lua
