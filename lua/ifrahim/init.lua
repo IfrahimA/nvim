@@ -1,3 +1,6 @@
+--Colors
+vim.opt.termguicolors = true
+
 -- Column (Left)
 vim.opt.number = true
 vim.opt.relativenumber = true
