@@ -1,13 +1,12 @@
 --Colors
 vim.opt.termguicolors = true
 
--- Column (Left)
-vim.opt.number = true
-vim.opt.relativenumber = true
+-- Fill Chars
+vim.opt.fillchars = { eob = " " }
 
 -- Tab Settings
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
+vim.opt.tabstop = 3
+vim.opt.shiftwidth = 3
 vim.opt.expandtab = true
 vim.opt.autoindent = true
 
@@ -52,14 +51,10 @@ vim.keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) 
 vim.keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
 
--- Open The Terminal
-vim.keymap.set("n", "<leader>t", ":term<CR>", { desc = "Open Terminal" })
-
 -- Nvim Tree
 vim.g.loaded_netrw = 1 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrwPlugin = 1
 
-local api = require("nvim-tree.api")
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Toggle Nvim Tree" })
 
 -- Telescope
