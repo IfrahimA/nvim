@@ -17,10 +17,24 @@ return {
 			},
 		})
 
+		--Rust
+		lspconfig.rust_analyzer.setup({
+			settings = {
+				["rust_analyzer"] = {
+					diagnostics = {
+						enable = false,
+					},
+				},
+			},
+		})
+
 		--C/C++
 		lspconfig.clangd.setup({})
 		lspconfig.ccls.setup({})
 		lspconfig.cmake.setup({})
+
+		--Meson
+		lspconfig.mesonlsp.setup({})
 
 		--Vim LSP
 		lspconfig.vimls.setup({})
