@@ -6,9 +6,16 @@ return {
 		local telescope = require("telescope")
 		telescope.setup({
 			file_ignore_patterns = {
-				"^.git/", -- Ignore the `.git` directory
-				"^node_modules/", -- Example: Ignore `node_modules`
-				"^.venv/", -- Example: Ignore Python virtual environments
+				".git/",
+				".cache",
+				"%.o",
+				"%.a",
+				"%.out",
+				"%.class",
+				"%.pdf",
+				"%.mkv",
+				"%.mp4",
+				"%.zip",
 			},
 			pickers = {
 				find_files = {
