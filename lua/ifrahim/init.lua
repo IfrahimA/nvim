@@ -42,11 +42,11 @@ vim.keymap.set("i", "jk", "<ESC>", { desc = "Exit Insert Mode" })
 vim.keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
 -- Setting up Split Windows
-vim.keymap.set("n", "<leader>sv", function()
+vim.keymap.set("n", "<leader>sh", function()
 	vim.cmd("vsplit | enew")
 end, { desc = "Vertical Split with Empty Buffer" })
 
-vim.keymap.set("n", "<leader>sh", function()
+vim.keymap.set("n", "<leader>sv", function()
 	vim.cmd("split | enew")
 end, { desc = "Horizontal Split with Empty Buffer" })
 
@@ -70,10 +70,6 @@ vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Toggle Nvim Tr
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
-
---Formatter
-vim.keymap.set("n", "<leader>fn", ":Format<CR>", { noremap = true, silent = true, desc = "Format Code" })
-vim.keymap.set("n", "<leader>fw", ":FormatWrite<CR>", { noremap = true, silent = true, desc = "Format Write Code" })
 
 --Terminal
 vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "Exit Terminal Mode" })
