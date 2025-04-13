@@ -7,7 +7,14 @@ return {
 	},
 	config = function()
 		require("nvim-tree").setup({
-			filters = {},
+			filters = {
+				dotfiles = true,
+			},
+			tab = {
+				sync = {
+					open = true,
+				},
+			},
 		})
 	end,
 }
