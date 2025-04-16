@@ -79,3 +79,20 @@ end, { desc = "Terminal Below" })
 vim.keymap.set("n", "<leader>tr", function()
 	vim.cmd("belowright vsplit | terminal")
 end, { desc = "Terminal Right" })
+
+-- Autosave
+vim.api.nvim_set_keymap("n", "<leader>n", ":ASToggle<CR>", {})
+
+--Automically Set :cd
+vim.opt.autochdir = true
+
+--Telescope File Browser
+vim.keymap.set("n", "<space>fb", ":Telescope file_browser<CR>")
+
+-- open file_browser with the path of the current buffer
+vim.keymap.set("n", "<space>fb", ":Telescope file_browser path=%:p:h select_buffer=true<CR>")
+
+-- Alternatively, using lua API
+vim.keymap.set("n", "<space>fb", function()
+	require("telescope").extensions.file_browser.file_browser()
+end)
