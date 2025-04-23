@@ -23,9 +23,6 @@ vim.opt.smartcase = true
 --Cursor Line
 vim.opt.cursorline = true
 
---Smooth Scroll
-vim.opt.smoothscroll = true
-
 --Dark Mode
 vim.opt.background = "dark"
 
@@ -66,25 +63,20 @@ vim.keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) 
 vim.keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
 
--- Nvim Tree
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
-vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Toggle Nvim Tree", silent = true })
-
 -- Telescope
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
 
--- Autosave
-vim.api.nvim_set_keymap("n", "<leader>n", ":ASToggle<CR>", {})
-
 --Automically Set :cd
 vim.opt.autochdir = true
 
--- Nvim Tree
-vim.api.nvim_set_keymap("n", "<leader>tc", ":NvimTreeFindFile", {})
-
 -- Terminal
 vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "Exit Terminal Mode" })
+
+--Tree
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Toggle Nvim Tree", silent = true })
+vim.api.nvim_set_keymap("n", "<leader>tc", ":NvimTreeFindFile", { desc = "Nvim Tree Find File", silent = true })

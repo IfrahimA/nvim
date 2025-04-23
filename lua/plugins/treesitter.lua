@@ -15,7 +15,7 @@ local M = {
 				"python",
 				"go",
 				"rust",
-				"typescript", -- Add your languages here
+				"typescript",
 			},
 			sync_install = false,
 			highlight = { enable = true },
