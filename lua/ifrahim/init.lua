@@ -53,6 +53,12 @@ end, { desc = "Horizontal Split with Empty Buffer" })
 vim.keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make Splits Equal Size" })
 vim.keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close Current Split" })
 
+-- Resize Windows
+vim.keymap.set("n", "<leader>+", ":resize +5<CR>", { desc = "Increase window height" })
+vim.keymap.set("n", "<leader>-", ":resize -5<CR>", { desc = "Decrease window height" })
+vim.keymap.set("n", "<leader>>", ":vertical resize +5<CR>", { desc = "Increase window width" })
+vim.keymap.set("n", "<leader><", ":vertical resize -5<CR>", { desc = "Decrease window width" })
+
 --Setting up Tabs
 vim.keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" }) -- open new tab
 vim.keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" }) -- close current tab
