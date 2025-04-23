@@ -70,21 +70,12 @@ vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current bu
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Toggle Nvim Tree" })
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Toggle Nvim Tree", silent = true })
 
 -- Telescope
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
-
---Terminal
-vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "Exit Terminal Mode" })
-vim.keymap.set("n", "<leader>tb", function()
-	vim.cmd("belowright split | terminal")
-end, { desc = "Terminal Below" })
-vim.keymap.set("n", "<leader>tr", function()
-	vim.cmd("belowright vsplit | terminal")
-end, { desc = "Terminal Right" })
 
 -- Autosave
 vim.api.nvim_set_keymap("n", "<leader>n", ":ASToggle<CR>", {})
@@ -94,3 +85,6 @@ vim.opt.autochdir = true
 
 -- Nvim Tree
 vim.api.nvim_set_keymap("n", "<leader>tc", ":NvimTreeFindFile", {})
+
+-- Terminal
+vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "Exit Terminal Mode" })
