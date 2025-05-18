@@ -79,7 +79,3 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Toggle Nvim Tree", silent = true })
 vim.api.nvim_set_keymap("n", "<leader>tc", ":NvimTreeFindFile", { desc = "Nvim Tree Find File", silent = true })
-
--- White Space
-vim.keymap.set("n", "j", "gj^", { noremap = true, silent = true })
-vim.keymap.set("n", "k", "gk^", { noremap = true, silent = true })
