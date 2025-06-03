@@ -11,21 +11,12 @@ return {
   opts = {},
   config = function()
     require("neo-tree").setup({
-      close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
-      popup_border_style = "NC",    -- or "" to use 'winborder' on Neovim v0.11+
-      enable_git_status = true,
-      enable_diagnostics = true,
-      open_files_do_not_replace_types = { "terminal", "trouble", "qf" }, -- when opening files, do not use windows containing these filetypes or buftypes
+      source_selector = {
+        winbar = true,
+        statusline = false,
+      },
       open_files_using_relative_paths = false,
-      sort_case_insensitive = false,                                     -- used when sorting files and directories in the tree
-      sort_function = nil,                                               -- use a custom function for sorting files and directories in the tree
-      -- sort_function = function (a,b)
-      --       if a.type == b.type then
-      --           return a.path > b.path
-      --       else
-      --           return a.type > b.type
-      --       end
-      --   end , -- this sorts files and directories descendantly
+      sort_case_insensitive = false, -- used when sorting files and directories in the tree
       default_component_configs = {
         container = {
           enable_character_fade = true,
@@ -219,7 +210,7 @@ return {
           },
         },
         follow_current_file = {
-          enabled = false,                      -- This will find and focus the file in the active buffer every time
+          enabled = true,                       -- This will find and focus the file in the active buffer every time
           --               -- the current file is changed while the tree is open.
           leave_dirs_open = false,              -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
         },
