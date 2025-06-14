@@ -36,7 +36,7 @@ vim.g.mapleader = " "
 vim.keymap.set("i", "jk", "<ESC>", { desc = "Exit Insert Mode" })
 
 -- Remove Search Highlights
-vim.keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
+vim.keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights", silent = true })
 
 -- Setting up Split Windows
 vim.keymap.set("n", "<leader>sh", function()
@@ -67,6 +67,7 @@ vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current bu
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
+vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
 
 --Automically Set :cd
 vim.opt.autochdir = true
@@ -74,10 +75,13 @@ vim.opt.autochdir = true
 -- Terminal
 vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "Exit Terminal Mode" })
 
---Tree
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle Nvim Tree", silent = true })
-vim.api.nvim_set_keymap("n", "<leader>tc", ":NvimTreeFindFile", { desc = "Nvim Tree Find File", silent = true })
-
 vim.g.neovide_input_macos_option_key_is_meta = "only_left"
+
+-- Noice
+vim.keymap.set("n", "<leader>nn", "<cmd>:Noice dismiss<CR>", { desc = "Silent Notifications", silent = true })
+
+--Oil
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
+--StatusLine
+vim.o.laststatus = 3
