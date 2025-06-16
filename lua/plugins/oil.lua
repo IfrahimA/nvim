@@ -11,6 +11,7 @@ return {
 			keymaps = {
 				["]"] = { "actions.cd", mode = "n" },
 			},
+			skip_confirm_for_simple_edits = true,
 		})
 	end,
 }

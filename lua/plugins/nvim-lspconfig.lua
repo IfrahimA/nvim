@@ -3,8 +3,21 @@ return {
 	config = function()
 		local lspconfig = require("lspconfig")
 
+		--GO
+		lspconfig.gopls.setup({
+			settings = {
+				gopls = {
+					analyses = {
+						unusedparams = true,
+					},
+					staticcheck = true,
+					gofumpt = true,
+				},
+			},
+		})
+
 		--Python
-		require("lspconfig").pylsp.setup({
+		lspconfig.pylsp.setup({
 			settings = {
 				pylsp = {
 					plugins = {
