@@ -8,10 +8,14 @@ return {
 			win_options = {
 				signcolumn = "yes:2",
 			},
+			columns = {
+				"icon",
+			},
 			keymaps = {
-				["]"] = { "actions.cd", mode = "n" },
+				["<C-d>"] = { "actions.cd", mode = "n" },
 			},
 			skip_confirm_for_simple_edits = true,
+			watch_for_changes = true,
 		})
 	end,
 }
